@@ -40,18 +40,32 @@ class m_mahasiswa extends Model
     protected $afterDelete    = [];
 
     // Function
+    // Get All Mahasiswa
     public function getAllMahasiswa()
     {
         // Connect to database
         $db = db_connect();
 
         // Query
-        $query = $db->query("SELECT * FROM mahasiswa");
+        $query = $db->query("SELECT * FROM mahasiswa order by nim asc");
 
         // Close connection
         $db->close();
 
         // Return Data
         return $query->getResultArray();
+    }
+
+    // Create Mahasiswa
+    public function createMahasiswa($data)
+    {
+        // Connect to database
+        $db = db_connect();
+
+        // Query
+        $db->query("INSERT INTO mahasiswa (nim, nama, umur) VALUES ('" . $data['nim'] . "', '" . $data['nama'] . "', '" . $data['umur'] . "')");
+
+        // Close connection
+        $db->close();
     }
 }

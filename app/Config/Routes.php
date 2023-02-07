@@ -31,7 +31,16 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 //$routes->get('/', fn () => 'Hello World!');
 //$routes->get('/', 'Home::home');
-$routes->get('/', 'c_mahasiswa::display');
+
+// Mahasiswa
+$routes->get('/mahasiswa', 'c_mahasiswa::display');
+$routes->get('/mahasiswa/create', 'c_mahasiswa::create');
+$routes->post('/mahasiswa/store', 'c_mahasiswa::store');
+
+// Home
+$routes->get('/', 'c_home::home');
+$routes->get('/home', 'c_home::home');
+$routes->get('/info', 'c_info::info');
 
 /*
  * --------------------------------------------------------------------

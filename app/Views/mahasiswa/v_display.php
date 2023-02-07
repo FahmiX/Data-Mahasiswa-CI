@@ -7,6 +7,7 @@
     <title>Mahasiswa</title>
 </head>
 <body>
+    <a href="/mahasiswa/create">Create</a>
     <h1>Daftar Mahasiswa</h1>
     <table border="1">
         <tr>
