@@ -3,5 +3,7 @@
 
 <!-- Section -->
 <?= $this->section('content'); ?>
-    <h1>Halaman Home</h1>
+    <center>
+        <h1>Halaman Home</h1>
+    </center>
 <?= $this->endSection(); ?>

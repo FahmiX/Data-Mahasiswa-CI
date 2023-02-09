@@ -68,4 +68,33 @@ class m_mahasiswa extends Model
         // Close connection
         $db->close();
     }
+
+    // Delete Mahasiswa
+    public function deleteMahasiswa($nim)
+    {
+        // Connect to database
+        $db = db_connect();
+
+        // Query
+        $db->query("DELETE FROM mahasiswa WHERE nim = '" . $nim . "'");
+
+        // Close connection
+        $db->close();
+    }
+
+    // Get Mahasiswa by NIM
+    public function getMahasiswa($nim)
+    {
+        // Connect to database
+        $db = db_connect();
+
+        // Query
+        $query = $db->query("SELECT * FROM mahasiswa WHERE nim = '" . $nim . "'");
+
+        // Close connection
+        $db->close();
+
+        // Return Data
+        return $query->getResultArray();
+    }
 }

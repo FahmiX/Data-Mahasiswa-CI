@@ -33,14 +33,17 @@ $routes->set404Override();
 //$routes->get('/', 'Home::home');
 
 // Mahasiswa
-$routes->get('/mahasiswa', 'c_mahasiswa::display');
-$routes->get('/mahasiswa/create', 'c_mahasiswa::create');
-$routes->post('/mahasiswa/store', 'c_mahasiswa::store');
+// $routes->get('/mahasiswa', 'c_mahasiswa::display');
+// $routes->get('/mahasiswa/create', 'c_mahasiswa::create');
+// $routes->post('/mahasiswa/store', 'c_mahasiswa::store');
 
 // Home
 $routes->get('/', 'c_home::home');
 $routes->get('/home', 'c_home::home');
 $routes->get('/info', 'c_info::info');
+$routes->get('/mahasiswa', 'c_mahasiswa::mahasiswa_tampil');
+$routes->get('/mahasiswa/delete/(:num)', 'c_mahasiswa::mahasiswa_delete/$1');
+$routes->get('/mahasiswa/detail/(:num)', 'c_mahasiswa::mahasiswa_detail/$1');
 
 /*
  * --------------------------------------------------------------------

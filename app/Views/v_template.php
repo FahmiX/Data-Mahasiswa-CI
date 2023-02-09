@@ -11,7 +11,7 @@
 <body>
     <main>
 
-        <table width="100%" height="520px">
+        <table width="100%" height="920px">
             <tr>
                 <th colspan="2" height="40px" bgcolor="#0275d8">
                     <h1>SELAMAT DATANG DI <?= $title ?? "Tugas web PPL" ?></h1>
@@ -19,16 +19,14 @@
             </tr>
             <tr bgcolor="#5bc0de" height="30px">
                 <td>
-                    <a href="/">Home</a>
-                    <a href="/info">Info</a>
+                    <a href="/">HOME</a>
+                    <a href="/info">INFO</a>
+                    <a href="/mahasiswa">MAHASISWA</a>
                 </td>
             </tr>
             <tr bgcolor="#a4c6fc">
-                <td colspan="2" height="504px">
-                    <center>
-                        Test
-                        <!-- <?= $this->renderSection('content') ?> -->
-                    </center>
+                <td colspan="2" height="700px">
+                    <?= $this->renderSection('content') ?>
                 </td>
             </tr>
             <tr bgcolor="#5cb85c">

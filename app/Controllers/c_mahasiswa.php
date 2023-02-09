@@ -33,4 +33,23 @@ class c_mahasiswa extends BaseController
 
         return redirect()->to('/mahasiswa');
     }
+
+    public function mahasiswa_tampil(){
+        $data['title'] = 'MAHASISWA';
+        $model = new Mahasiswa();
+        $data['mahasiswa'] = $model->getAllMahasiswa();
+        return view('v_mahasiswa_display', $data);
+    }
+
+    public function mahasiswa_delete($nim){
+        $model = new Mahasiswa();
+        $model->deleteMahasiswa($nim);
+        return redirect()->to('/mahasiswa');
+    }
+
+    public function mahasiswa_detail($nim){
+        $model = new Mahasiswa();
+        $data['mahasiswa'] = $model->getMahasiswa($nim);
+        return view('v_mahasiswa_detail', $data);
+    }
 }
