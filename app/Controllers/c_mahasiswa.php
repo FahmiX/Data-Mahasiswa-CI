@@ -52,4 +52,22 @@ class c_mahasiswa extends BaseController
         $data['mahasiswa'] = $model->getMahasiswa($nim);
         return view('v_mahasiswa_detail', $data);
     }
+
+    public function mahasiswa_create(){
+        return view('v_mahasiswa_create');
+    }
+
+    public function mahasiswa_store(){
+        $model = new Mahasiswa();
+
+        $data = [
+            'nim' => $this->request->getPost('nim'),
+            'nama' => $this->request->getPost('nama'),
+            'umur' => $this->request->getPost('umur')
+        ];
+
+        $model->createMahasiswa($data);
+
+        return redirect()->to('/mahasiswa');
+    }
 }

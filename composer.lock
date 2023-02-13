@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/CodeIgniter4.git",
-                "reference": "0a4209e1f11a9c9e96526282be544922ee59c14d"
+                "reference": "9c0141aa72adb669027733a0668f201309746e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/CodeIgniter4/zipball/0a4209e1f11a9c9e96526282be544922ee59c14d",
-                "reference": "0a4209e1f11a9c9e96526282be544922ee59c14d",
+                "url": "https://api.github.com/repos/codeigniter4/CodeIgniter4/zipball/9c0141aa72adb669027733a0668f201309746e97",
+                "reference": "9c0141aa72adb669027733a0668f201309746e97",
                 "shasum": ""
             },
             "require": {
@@ -125,7 +125,7 @@
                 "slack": "https://codeigniterchat.slack.com",
                 "issues": "https://github.com/codeigniter4/CodeIgniter4/issues"
             },
-            "time": "2023-02-07T17:05:40+00:00"
+            "time": "2023-02-08T00:56:21+00:00"
         },
         {
             "name": "codeigniter4/translations",

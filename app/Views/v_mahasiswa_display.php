@@ -4,6 +4,7 @@
 <!-- Section -->
 <?= $this->section('content'); ?>
 <center>
+    <a href="/mahasiswa/create">Create</a>
     <h1>Data Mahasiswa</h1>
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>

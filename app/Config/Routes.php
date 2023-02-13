@@ -44,6 +44,8 @@ $routes->get('/info', 'c_info::info');
 $routes->get('/mahasiswa', 'c_mahasiswa::mahasiswa_tampil');
 $routes->get('/mahasiswa/delete/(:num)', 'c_mahasiswa::mahasiswa_delete/$1');
 $routes->get('/mahasiswa/detail/(:num)', 'c_mahasiswa::mahasiswa_detail/$1');
+$routes->get('/mahasiswa/create', 'c_mahasiswa::mahasiswa_create');
+$routes->post('/mahasiswa/store', 'c_mahasiswa::mahasiswa_store');
 
 /*
  * --------------------------------------------------------------------
