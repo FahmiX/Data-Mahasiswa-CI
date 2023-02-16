@@ -38,14 +38,25 @@ $routes->set404Override();
 // $routes->post('/mahasiswa/store', 'c_mahasiswa::store');
 
 // Home
-$routes->get('/', 'c_home::home');
-$routes->get('/home', 'c_home::home');
-$routes->get('/info', 'c_info::info');
-$routes->get('/mahasiswa', 'c_mahasiswa::mahasiswa_tampil');
-$routes->get('/mahasiswa/delete/(:num)', 'c_mahasiswa::mahasiswa_delete/$1');
-$routes->get('/mahasiswa/detail/(:num)', 'c_mahasiswa::mahasiswa_detail/$1');
-$routes->get('/mahasiswa/create', 'c_mahasiswa::mahasiswa_create');
-$routes->post('/mahasiswa/store', 'c_mahasiswa::mahasiswa_store');
+// Group give filter authGuard
+$routes->group('', ['filter' => 'authGuard'], function ($routes) {
+    $routes->get('/', 'c_home::home');
+    $routes->get('/home', 'c_home::home');
+    $routes->get('/info', 'c_info::info');
+    $routes->get('/mahasiswa', 'c_mahasiswa::mahasiswa_tampil');
+    $routes->get('/mahasiswa/delete/(:num)', 'c_mahasiswa::mahasiswa_delete/$1');
+    $routes->get('/mahasiswa/detail/(:num)', 'c_mahasiswa::mahasiswa_detail/$1');
+    $routes->get('/mahasiswa/create', 'c_mahasiswa::mahasiswa_create');
+    $routes->post('/mahasiswa/store', 'c_mahasiswa::mahasiswa_store');
+    $routes->get('/mahasiswa/edit/(:num)', 'c_mahasiswa::mahasiswa_edit/$1');
+    $routes->post('/mahasiswa/update', 'c_mahasiswa::mahasiswa_update');
+    $routes->post('/mahasiswa/search', 'c_mahasiswa::mahasiswa_search');
+});
+
+// Login & Logout
+$routes->get('/login', 'c_login::display');
+$routes->post('/login', 'c_login::login');
+$routes->get('/logout', 'c_login::logout');
 
 /*
  * --------------------------------------------------------------------

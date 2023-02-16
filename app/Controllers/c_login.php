@@ -7,9 +7,10 @@ use App\Models\m_user as User;
 
 class c_login extends BaseController
 {
-    public function index()
+    public function display()
     {
-        return view('v_login_form');
+        $data['title'] = 'LOGIN';
+        return view('v_login_form', $data);
     }
 
     public function login()
@@ -21,35 +22,35 @@ class c_login extends BaseController
         $password = $this->request->getVar('password');
 
         // get user data from database
-        $user = $model->where('username', $username)->first();
+        $user = $model->checkUser($username, $password);
 
-        // check if user exists
+        print_r($user);
+
+        // check user data
         if ($user) {
-            // check if password is correct
-            if (password_verify($password, $user['password'])) {
-                // set session
-                $data = [
-                    'id' => $user['id'],
-                    'username' => $user['username'],
-                    'name' => $user['name'],
-                    'email' => $user['email'],
-                    'isLoggedIn' => true
-                ];
-                session()->set($data);
-                return redirect()->to('/dashboard');
-            } else {
-                session()->setFlashdata('error', 'Password salah');
-                return redirect()->to('/login');
-            }
+            // set session
+            $data = [
+                'username' => $user['username'],
+                'email' => $user['email'],
+                'isLoggedIn' => TRUE
+            ];
+            session()->set($data);
+            // flashdata
+            session()->setFlashdata('success', 'Login berhasil');
+            return redirect()->to('/');
         } else {
-            session()->setFlashdata('error', 'Username tidak ditemukan');
+            // set session
+            session()->setFlashdata('error', 'Username atau Password salah');
             return redirect()->to('/login');
         }
     }
 
     public function logout()
     {
+        // remove session
         session()->destroy();
-        return redirect()->to('/login');
+        // flashdata
+        session()->setFlashdata('success', 'Logout berhasil');
+        return redirect()->to('/');
     }
 }

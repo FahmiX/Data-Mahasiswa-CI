@@ -70,4 +70,34 @@ class c_mahasiswa extends BaseController
 
         return redirect()->to('/mahasiswa');
     }
+
+    public function mahasiswa_edit($nim){
+        $model = new Mahasiswa();
+        $data['mahasiswa'] = $model->getMahasiswa($nim);
+        return view('v_mahasiswa_edit', $data);
+    }
+
+    public function mahasiswa_update(){
+        $model = new Mahasiswa();
+
+        $data = [
+            'nim' => $this->request->getPost('nim'),
+            'nama' => $this->request->getPost('nama'),
+            'umur' => $this->request->getPost('umur')
+        ];
+
+        $model->updateMahasiswa($data);
+
+        return redirect()->to('/mahasiswa');
+    }
+
+    public function mahasiswa_search(){
+        $model = new Mahasiswa();
+
+        $keyword = $this->request->getPost('keyword');
+
+        $data['mahasiswa'] = $model->searchMahasiswa($keyword);
+
+        return view('v_mahasiswa_display', $data);
+    }
 }

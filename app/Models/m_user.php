@@ -40,5 +40,28 @@ class m_user extends Model
     protected $afterDelete    = [];
 
     // Function
-    // Hash Password
+
+    // Check Username
+    public function checkUser(string $username, string $password)
+    {
+        // connect to database
+        $db = db_connect();
+
+        // check username
+        $query = $db->query("SELECT * FROM users WHERE username = '$username'");
+
+        if ($query->getNumRows() > 0) {
+            // get user data
+            $user = $query->getRowArray();
+
+            // check password
+            if (password_verify($password, $user['password'])) {
+                return $user;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }   
+    }
 }

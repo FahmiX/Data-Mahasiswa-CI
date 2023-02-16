@@ -97,4 +97,33 @@ class m_mahasiswa extends Model
         // Return Data
         return $query->getResultArray();
     }
+
+    // Update Mahasiswa
+    public function updateMahasiswa($data)
+    {
+        // Connect to database
+        $db = db_connect();
+
+        // Query
+        $db->query("UPDATE mahasiswa SET nama = '" . $data['nama'] . "', umur = '" . $data['umur'] . "' WHERE nim = '" . $data['nim'] . "'");
+
+        // Close connection
+        $db->close();
+    }
+
+    // Search Mahasiswa
+    public function searchMahasiswa($keyword)
+    {
+        // Connect to database
+        $db = db_connect();
+
+        // Query
+        $query = $db->query("SELECT * FROM mahasiswa WHERE nim LIKE '%" . $keyword . "%' OR nama LIKE '%" . $keyword . "%' OR umur LIKE '%" . $keyword . "%'");
+
+        // Close connection
+        $db->close();
+
+        // Return Data
+        return $query->getResultArray();
+    }
 }
