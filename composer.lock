@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/CodeIgniter4.git",
-                "reference": "4a4f55b1308cf9f9e22f19be84ce444d69263c2d"
+                "reference": "c546e21c4e1570f870bc9a7976755f1d5232745c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/CodeIgniter4/zipball/4a4f55b1308cf9f9e22f19be84ce444d69263c2d",
-                "reference": "4a4f55b1308cf9f9e22f19be84ce444d69263c2d",
+                "url": "https://api.github.com/repos/codeigniter4/CodeIgniter4/zipball/c546e21c4e1570f870bc9a7976755f1d5232745c",
+                "reference": "c546e21c4e1570f870bc9a7976755f1d5232745c",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 "phpunit/phpcov": "^8.2",
                 "phpunit/phpunit": "^9.1",
                 "predis/predis": "^1.1 || ^2.0",
-                "rector/rector": "0.15.13",
+                "rector/rector": "0.15.16",
                 "vimeo/psalm": "^5.0"
             },
             "suggest": {
@@ -125,7 +125,7 @@
                 "slack": "https://codeigniterchat.slack.com",
                 "issues": "https://github.com/codeigniter4/CodeIgniter4/issues"
             },
-            "time": "2023-02-13T07:44:34+00:00"
+            "time": "2023-02-15T23:15:35+00:00"
         },
         {
             "name": "codeigniter4/translations",

@@ -28,6 +28,7 @@
                     <a href="/">HOME</a>
                     <a href="/info">INFO</a>
                     <a href="/mahasiswa">MAHASISWA</a>
+                    <a href="/pegawai">PEGAWAI</a>
                     <?php
                         //cek login
                         if (session()->get('isLoggedIn') == true) {

@@ -43,6 +43,8 @@ $routes->group('', ['filter' => 'authGuard'], function ($routes) {
     $routes->get('/', 'c_home::home');
     $routes->get('/home', 'c_home::home');
     $routes->get('/info', 'c_info::info');
+
+    // mahasiswa
     $routes->get('/mahasiswa', 'c_mahasiswa::mahasiswa_tampil');
     $routes->get('/mahasiswa/delete/(:num)', 'c_mahasiswa::mahasiswa_delete/$1');
     $routes->get('/mahasiswa/detail/(:num)', 'c_mahasiswa::mahasiswa_detail/$1');
@@ -51,6 +53,11 @@ $routes->group('', ['filter' => 'authGuard'], function ($routes) {
     $routes->get('/mahasiswa/edit/(:num)', 'c_mahasiswa::mahasiswa_edit/$1');
     $routes->post('/mahasiswa/update', 'c_mahasiswa::mahasiswa_update');
     $routes->post('/mahasiswa/search', 'c_mahasiswa::mahasiswa_search');
+
+    // pegawai
+    $routes->get('/pegawai', 'c_pegawai::display');
+    $routes->get('/pegawai/create', 'c_pegawai::create');
+    $routes->post('/pegawai/store', 'c_pegawai::store');   
 });
 
 // Login & Logout
