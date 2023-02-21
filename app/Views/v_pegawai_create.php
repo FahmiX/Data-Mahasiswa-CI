@@ -4,6 +4,18 @@
 <!-- Section -->
 <?= $this->section('content'); ?>
 <center>
+    <?php
+    if (isset($errors)) {
+        echo '<div style="width: 300px"; border-radius: 5px; >';
+        echo '<ul style="background-color: red; color: white; padding: 10px;">';
+        foreach ($errors as $error) {
+            echo "<li>$error</li>";
+        }
+        echo '</ul>';
+        echo '</div>';
+    }
+    ?>
+
     <a href="/pegawai">Kembali</a>
     <h1>Create Pegawai</h1>
     <form action="/pegawai/store" method="post">
