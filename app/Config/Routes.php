@@ -55,9 +55,10 @@ $routes->group('', ['filter' => 'authGuard'], function ($routes) {
     $routes->post('/mahasiswa/search', 'c_mahasiswa::mahasiswa_search');
 
     // pegawai
-    $routes->get('/pegawai', 'c_pegawai::display');
-    $routes->get('/pegawai/create', 'c_pegawai::create');
-    $routes->post('/pegawai/store', 'c_pegawai::store');   
+    $routes->get('/pegawai', 'c_pegawai::pegawai_display');
+    $routes->get('/pegawai/create', 'c_pegawai::pegawai_create');
+    $routes->post('/pegawai/store', 'c_pegawai::pegawai_store');   
+    $routes->get('/pegawai/delete/(:num)', 'c_pegawai::pegawai_delete/$1');
 });
 
 // Login & Logout

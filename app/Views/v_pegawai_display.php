@@ -14,6 +14,7 @@
             <th>Telepon</th>
             <th>Email</th>
             <th>Pendidikan</th>
+            <th>Aksi</th>
         </tr>
         <?php foreach($pegawai as $row): ?>
             <tr>
@@ -23,6 +24,9 @@
                 <td><?= $row['telp']; ?></td>
                 <td><?= $row['email']; ?></td>
                 <td><?= $row['pendidikan']; ?></td>
+                <td>
+                    <a href="/pegawai/delete/<?= $row['nim']; ?>">Delete</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
