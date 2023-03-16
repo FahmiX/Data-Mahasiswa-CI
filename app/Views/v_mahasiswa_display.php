@@ -11,25 +11,29 @@
         <button type="submit" name="submit">Search</button>
     </form>
     </br>
-    <table border="1" cellpadding="5" cellspacing="0">
-        <tr>
-            <th>NIM</th>
-            <th>Nama</th>
-            <th>Umur</th>
-            <th>Aksi</th>
-        </tr>
-        <?php foreach($mahasiswa as $row): ?>
-        <tr>
-            <td><?= $row['nim']; ?></td>
-            <td><?= $row['nama']; ?></td>
-            <td><?= $row['umur']; ?></td>
-            <td>
-                <a href="/mahasiswa/delete/<?= $row['nim']; ?>">Delete</a>
-                <a href="/mahasiswa/detail/<?= $row['nim']; ?>">Detail</a>
-                <a href="/mahasiswa/edit/<?= $row['nim']; ?>">Edit</a>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <div class="table-responsive container">
+        <table class="table table-primary table-bordered table-striped table-hover align-middle">
+            <thead class="table-dark align-middle">
+                <th class="text-center">NIM</th>
+                <th class="text-center">Nama</th>
+                <th class="text-center">Umur</th>
+                <th class="text-center">Aksi</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <?php foreach($mahasiswa as $row): ?>
+                    <td class="text-center"><?= $row['nim']; ?></td>
+                    <td><?= $row['nama']; ?></td>
+                    <td class="text-center"><?= $row['umur']; ?></td>
+                    <td class="text-center">
+                        <a href="/mahasiswa/detail/<?= $row['nim']; ?>" class="btn btn-primary">Detail</a>
+                        <a href="/mahasiswa/edit/<?= $row['nim']; ?>" class="btn btn-warning">Edit</a>
+                        <a href="/mahasiswa/delete/<?= $row['nim']; ?>" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </center>
 <?= $this->endSection(); ?>

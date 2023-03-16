@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Extends -->
+<?= $this->extend('v_bootstrap'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? "PPL" ?></title>
-</head>
-
+<!-- Section -->
+<?= $this->section('bootstrap'); ?>
 <?php
     // get username logged in
     if (session()->get('isLoggedIn') == true) {
@@ -15,12 +10,15 @@
     }
 ?>
 
+<title><?= $title ?? "PPL" ?></title>
 <body>
     <main>
         <table width="100%" height="920px">
             <tr>
-                <th colspan="2" height="40px" bgcolor="#0275d8">
-                    <h1>Selamat Datang <?= $session ?? "GUEST" ?></h1>
+                <th colspan="2" height="100px" bgcolor="#0275d8">
+                    <center>
+                        <h2>Selamat Datang <?= $session ?? "GUEST" ?></h2>
+                    </center>
                 </th>
             </tr>
             <tr bgcolor="#5bc0de" height="30px">
@@ -39,7 +37,7 @@
                     ?>
                 </td>
             </tr>
-            <tr bgcolor="#a4c6fc">
+            <tr>
                 <td colspan="2" height="700px">
                     <center>
                         <?php
@@ -57,7 +55,7 @@
             <tr bgcolor="#5cb85c">
                 <td colspan="2">
                     <center>
-                        <h3>CopyRight &copy; Fahmi.Inc 2023</h3>
+                        <h5>CopyRight &copy; Fahmi.Inc 2023</h5>
                     </center>
                 </td>
             </tr>
@@ -65,4 +63,4 @@
     </main>
 </body>
 
-</html>
+<?= $this->endSection(); ?>
